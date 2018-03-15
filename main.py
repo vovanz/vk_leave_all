@@ -21,7 +21,10 @@ def main():
         while True:
             response = get(count=500)
 
-            groups = vk.groups.getById(group_ids=','.join((str(a) for a in response.get('items', []))))
+            try:
+                groups = vk.groups.getById(group_ids=','.join((str(a) for a in response.get('items', []))))
+            except:
+                groups = response.get('items', [])
             if not groups:
                 break
             continue_ = False
