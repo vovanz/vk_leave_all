@@ -4,8 +4,6 @@ import vk_api
 
 
 def main():
-    """ Пример получения последнего сообщения со стены """
-
     login, password = input('login:'), input('password:')
     vk_session = vk_api.VkApi(login, password)
 
